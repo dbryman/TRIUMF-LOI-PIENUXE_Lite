@@ -1,0 +1,39 @@
+\subsection{Calorimeter (CALO)}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{sections/figures/tail.png}
+\caption{Upper plot: histogram of $E_{e}^{dep}$, the $\pi_{e2}$ positron energy deposited in active components for a proposed 28 $X_{0}$ thick spherical LXe concept detector (black), compared with the same for the 12 $X_{0}$ pure CsI PEN apparatus (red), along with energy deposition
+for the background $\pi \rightarrow \mu \rightarrow e$ decay chain events (blue).  Lower plot: comparison of the corresponding "tail" fractions as a function of $E_{e}^{dep}$; the LXe concept detector improves on the PEN fraction by two orders of magnitude in the region of interest.
+\todo{I think we should add a PIENU spectrum as well and change the text accordingly}}
+\label{fig:tail}
+\end{figure}
+
+
+A calorimeter covering 3$\pi$ solid angle with a thickness of 28 $X_0$ could dramatically reduce the ``tail” region
+%-of-interest, 
+which overlaps with the Michel spectrum, a key source of systematic uncertainty, see fig.\cite{fig:tail}. 
+Two scintillation calorimeter options are presently under consideration: Liquid xenon and LSO crystals. Their main properties are compared in 
+Table~\ref{tab:calos}. Evaluations  of potential energy and timing performance, rate capabilities, mechanical and cryogenic facilities, and cost are ongoing.
+\begin{table}
+\center
+\begin{tabular}{cccccccc}
+\hline
+\hline
+ detector 	&  density 		& 	dE/dx	&	$X_0$ 	& 	$R_M$ 	& decay time 	& $\lambda_{max}$ 	& light output  \\
+ 			&	g/cm3		&	MeV/cm	&	cm		&	cm		&	ns			&	nm				&	\%		\\	
+\hline
+LXe			&	2.953 		&	3.707	&	2.872	&	5.224	&	3, 27, 45	&	178			&	125 ?  \\
+LSO(Ce)		&	7.40			&	9.6		&	1.14	&	2.07	&	40		&	402			&	85		\\	
+\hline
+\hline
+\end{tabular}
+\caption{LXe and LSO properties: density, minimum ioization, radiation length, Moli\`ere radius, decay times, maximum emission wavelength and relative light output compared to NaI(Tl). The LXe boiling point at 1 atm is 165.1 K. \todo{please check, LXe light output?}}
+\label{tab:calos}
+\end{table}
+
+
+\subsubsection{LXe Calorimenter}
+\input {sections/Detector/lxe.tex}
+
+\subsubsection{Crystal Calorimeter}
+\input{sections/Detector/lso.tex}

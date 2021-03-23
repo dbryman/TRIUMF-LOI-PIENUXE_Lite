@@ -1,0 +1,128 @@
+%\documentclass[a4paper,11pt]{article}
+
+%\documentclass{article}
+
+%\begin{document}
+
+\documentclass[12pt]{article}
+\usepackage{latexsym,multicol,graphicx,rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[sorting=none, style = numeric]{biblatex}
+%\usepackage[sorting=none, style = science]{biblatex}
+\addbibresource{references.bib}
+\usepackage{graphicx}
+%\usepackage{authblk}
+\usepackage[margin=1 in]{geometry}
+\usepackage{amsmath}
+\usepackage[font=small, margin=1 in]{caption}
+
+%Peter
+\usepackage{easylist}
+\newcommand{\bl}{\begin{easylist}}
+\newcommand{\el}{\end{easylist}}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline,color=blue!30, size=\small}{}
+%\newcommand{\nexp}{PiENuXe}
+\newcommand{\nexp}{PIENUX}
+\newcommand{\ssp}{\vspace{1mm}}
+
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{dcolumn}
+%\usepackage{longtable}
+%\usepackage{pifont}
+
+% Use Michel Goossens' dense lists Itemize, Enumerate and Description
+
+\let\Otemize =\itemize
+\let\Onumerate =\enumerate
+\let\Oescription =\description
+% Zero the vertical spacing parameters
+\def\Nospacing{\itemsep=0pt\topsep=0pt\partopsep=0pt\parskip=0pt\parsep=0pt}
+% Redefine the environments in terms of the original values
+\newenvironment{Itemize}{\Otemize\Nospacing}{\endlist}
+\newenvironment{Enumerate}{\Onumerate\Nospacing}{\endlist}
+\newenvironment{Description}{\Oescription\Nospacing}{\endlist}
+
+\newcounter{expnum}
+
+\renewcommand{\thebibliography}[1]{\list
+ {\arabic{enumi}.}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \renewcommand{\newblock}{\hskip .11em plus .33em minus -.07em}
+ \itemsep=0pt\topsep=0pt\partopsep=0pt\parskip=0pt\parsep=0pt
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+\makeatletter
+\renewcommand{\ps@plain}{%
+ \renewcommand{\@oddhead}{\sffamily\bfseries
+ \hspace{-2mm}%
+ \begin{tabular}[t]{|p{180mm}|}\hline
+  {\footnotesize
+  TRIUMF EEC New Letter of Intent
+  \hspace{\fill}
+  Detailed Statement of Proposed Research for Experiment \#: \theexpnum}\\ \hline
+ \rule[-242mm]{0mm}{0mm}\\ \hline
+ \end{tabular}}
+ \renewcommand{\@evenhead}{\@oddhead}
+ \renewcommand{\@oddfoot}{\sffamily\hfil\thepage\hfil}
+ \renewcommand{\@evenfoot}{\@oddfoot}}
+\makeatother
+\textwidth      180mm
+\textheight     240mm
+\topmargin      -20mm
+\oddsidemargin   -7mm
+\flushbottom
+\frenchspacing
+
+\pagestyle{plain}
+
+\begin{document}
+
+\setcounter{expnum}{2127}
+%{S2127LOI}
+
+\title{TRIUMF S2127LOI: Rare Pion Decay }
+
+\date{March 29, 2021}
+
+
+
+
+
+\maketitle
+
+%\tableofcontents
+%\input{abstract.tex}
+
+\section{Scientific Value}
+
+
+%\section{Theory}
+\input{sections/theory.tex}
+
+%\clearpage
+\section{\nexp\ Description of the Experiment}\label{s:PIENUXEdet}
+\input{sections/Concepts/concepts.tex}
+\input{sections/Detector/detector.tex}
+%\section{Previous Experiments}
+
+\section{Beam and Beam Time}
+\input{sections/beam.tex}
+
+\newpage
+\section{Development Plan}
+\input{sections/Development/development.tex}
+
+%\section{Conclusions}
+%\input{sections/conclusion.tex}
+
+
+%\acknowledgments
+
+
+\printbibliography
+\end{document}
